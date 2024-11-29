@@ -127,6 +127,44 @@ const currentYear = new Date().getFullYear();
 // Stel het huidige jaar in als de tekst van het element
 copyrightYearElement.textContent = currentYear;
 
+/*dropdown toggle vervangen*/
+const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+
+dropdownToggles.forEach(dropdown=> {
+    const icon = dropdown.querySelector('.icon-pages');
+
+    //eventlistener toevoegen voor het openen van de dropdown
+    dropdown.addEventListener('show.bs.dropdown', function (){
+        icon.classList.remove('bi-plus');
+        icon.classList.add('bi-dash');
+    })
+    //eventlistener voor het sluiten van de dropdown
+    dropdown.addEventListener('hide.bs.dropdown',
+        function (){
+            icon.classList.remove('bi-dash');
+            icon.classList.add('bi-plus');
+        })
+});
+
+/*Hamburger menu icon vervangen door kruisje*/
+const navbarToggler = document.querySelector('.navbar-toggler');
+const toggleIcon = document.querySelector('.toggle-icon');
+
+//luisteren wanneer er op het hamburgertje geklikt wordt
+navbarToggler.addEventListener("click", function(){
+    const isExpanded = navbarToggler.getAttribute('aria-expanded') === 'true';
+
+    // wisselen van het icoontje
+    if (isExpanded){
+        toggleIcon.classList.remove('bi-list');
+        toggleIcon.classList.add('bi-x')
+    }else{
+        toggleIcon.classList.remove('bi-x')
+        toggleIcon.classList.add('bi-list');
+
+    }
+});
+
 
 
 

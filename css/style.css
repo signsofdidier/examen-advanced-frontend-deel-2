@@ -136,6 +136,13 @@ body{
     transition: top 0.3s ease-in-out;
 }
 
+.navbar-toggler{
+    border:none;
+    font-size:2.6rem
+}
+
+
+
 .placeholder {
     transition: top 0.3s ease-in-out;
     display: none; /* Standaard verborgen */
@@ -292,10 +299,10 @@ body{
 /*button active borders*/
 .btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active{
     border-color: transparent;
+    background-color: var(--lichtgroen);
 }
 
 /*PAGINATION*/
-
 .pagination-row button:hover{
     color: white;
     background-color: var(--lichtgroen) !important;
