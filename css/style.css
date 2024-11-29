@@ -111,6 +111,15 @@ body{
     padding: 5rem 0;
 }
 
+/*cursor pointer voor elementen die niet met hover temaken hebben*/
+.cursor-pointer{
+    cursor: pointer;
+}
+
+/*Header top*/
+#header-top a:hover{
+    color: var(--lichtgroen);
+}
 
 /*NAVBAR*/
 .navbar{
@@ -196,6 +205,9 @@ body{
 .categorie-lijst li a:hover{
     color: var(--lichtgroen);
 }
+.accordion-item button:hover{
+    color: var(--lichtgroen);
+}
 
 /*prijs slider*/
 
@@ -252,6 +264,7 @@ body{
 .choose-color-box{
     width: 17px;
     height: 17px;
+    cursor: pointer;
 }
 
 /*FILTER TAGS*/
@@ -401,19 +414,19 @@ body{
 }
 
 
-#card-arranger.active img {
+.card-arranger.active img {
     content: url('../images/icon-15.png');
 }
 
-#long-arranger.active img {
+.long-arranger.active img {
     content: url('../images/icon-17.png');
 }
 
-#card-arranger:hover img {
+.card-arranger:hover img {
     content: url('../images/icon-15.png');
 }
 
-#long-arranger:hover img {
+.long-arranger:hover img {
     content: url('../images/icon-17.png');
 }
 
@@ -633,18 +646,22 @@ body{
     height:35px;
     background-color:var(--donkergrijs);
     border-radius: 50%;
-    color:var(--lichtgrijs);
     cursor: pointer;
     transition: all 0.32s ease;
 }
+    .social-icons li:hover{
+        background: var(--lichtgroen);
+    }
+
+    .social-icons li:hover i{
+        color: white;
+    }
+
 .copyright a:hover{
     text-decoration: underline  !important;
 }
 
-.social-icons li:hover{
-    background: var(--lichtgroen);
-    color: white;
-}
+
 .payments img{
     transition: all 0.2s ease;
 }
