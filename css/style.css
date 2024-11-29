@@ -104,17 +104,78 @@ body{
 .mt-8{
     margin-top: 7rem;
 }
+.mb-6{
+    margin-bottom: 7rem;
+}
 .py-6{
     padding: 5rem 0;
 }
 
+
 /*NAVBAR*/
+.navbar{
+    transition: top 0.3s ease-in-out;
+    background-color: rgba(255,255,255,1);
+}
+
+.navbar-small{
+    padding: 5px 0 !important;
+    transition: top 0.3s ease-in-out;
+}
+.navbar-tiny-img-small{
+    height:40px;
+    transition: top 0.3s ease-in-out;
+}
+
+.placeholder {
+    transition: top 0.3s ease-in-out;
+    display: none; /* Standaard verborgen */
+    height: 0; /* Begin met geen hoogte */
+}
+
+
 .navbar .nav-item{
     width: 100%;
+    transition: all 0.3s ease-in-out;
 }
+.navbar .nav-item a{
+    transition: all 0.3s ease-in-out;
+}
+    .navbar .nav-item:hover{
+        background-color: var(--lichtgroen);
+        border-radius: 50rem;
+        color:white !important;
+    }
+
+    .navbar .nav-item a:hover{
+        color:white !important;
+    }
+
+    .navbar-active{
+        background-color: var(--lichtgroen);
+        border-radius: 50rem;
+        color:white !important;
+        transition: all 0.3s ease-in-out;
+    }
+
+/*navbar scrolled*/
+.navbar.scrolled{
+    background-color:#fff;
+}
+
 #mobile-header-width{
     width:100%;
 }
+
+/*nav toggler focus border*/
+.navbar-toggler:focus{
+    box-shadow: 0 0 0;
+}
+
+.form-control:focus{
+    box-shadow: 0 0 0;
+}
+
 /*BREADCRUMB*/
 .breadcrumb a:hover{
     color: var(--lichtgroen)
@@ -204,13 +265,28 @@ body{
     bottom:30px;
     right:30px;
     z-index: 10;
+    transition: all 0.2s ease;
+}
+
+#offcanvas-button-filter:hover{
+    transform: scale(1.1);
 }
 
 #offcanvas-button-filter.btn{
     background-color: var(--lichtgroen) !important;
 }
 
+/*button active borders*/
+.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active{
+    border-color: transparent;
+}
+
 /*PAGINATION*/
+
+.pagination-row button:hover{
+    color: white;
+    background-color: var(--lichtgroen) !important;
+}
 /* Maak de vakjes groter */
 .custom-pagination .page-link {
     width: 40px;
@@ -220,6 +296,10 @@ body{
 /* Voeg marges toe tussen de knoppen */
 .custom-pagination .page-item {
     margin: 0 3px;
+}
+
+.custom-pagination .page-item a:hover {
+    color:white;
 }
 
 /* Actieve knop groen maken */
@@ -271,11 +351,55 @@ body{
     transform: scale(1.1);
 }
 
+.carousel-replacement-mobile{
+    width: 100%;
+    height:300px;
+
+}
+
+.carousel-replacement-mobile-gradient{
+    position:absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height:100%;
+    z-index:5;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.5) 50%);
+}
+
+.carousel-replacement-mobile img{
+    object-fit: cover;
+    object-position: left center;
+}
+
+.carousel-replacement-mobile-overlay{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    z-index:10;
+}
+
+.carousel-learn-more{
+    transition: all 0.2s ease;
+}
+
+.carousel-learn-more:hover{
+    transform: scale(1.1);
+    background-color: var(--lichtgroen);
+}
+
+/*product top dropdowns*/
+#product-top-dropdown button{
+    width:100%;
+}
+
 /*product-arranger-buttons*/
-#product-arranger-buttons .active{
+#product-arranger-buttons .active, #product-arranger-buttons button:hover{
     background-color: var(--lichtgroen) !important;
     border: 1px transparent solid;
 }
+
 
 #card-arranger.active img {
     content: url('../images/icon-15.png');
@@ -284,6 +408,15 @@ body{
 #long-arranger.active img {
     content: url('../images/icon-17.png');
 }
+
+#card-arranger:hover img {
+    content: url('../images/icon-15.png');
+}
+
+#long-arranger:hover img {
+    content: url('../images/icon-17.png');
+}
+
 
 /*PRODUCTS*/
 
@@ -359,6 +492,37 @@ body{
     opacity: 1;
 }
 
+/*card button hover*/
+.btn-add-to-cart i, .btn-learn-more i{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    opacity: 0;
+    transition: all 0.2s ease;
+}
+
+.btn-add-to-cart span, .btn-learn-more span{
+    opacity:1;
+    transition: all 0.2s ease;
+}
+.btn-add-to-cart, .btn-learn-more{
+    position: relative;
+}
+
+    .btn-add-to-cart:hover span, .btn-learn-more:hover span{
+        opacity:0;
+    }
+    .btn-add-to-cart:hover i, .btn-learn-more:hover i{
+        opacity: 1;
+    }
+
+
+
+
+
+
 /*Cart icons grid*/
 .cart-icons{
     position: absolute;
@@ -405,6 +569,32 @@ body{
     color: var(--lichtgroen);
 }
 
+/*HOT SECTION*/
+#hot-section .hot-items{
+    cursor: pointer;
+}
+
+#hot-section .hot-items:hover h3{
+    color:var(--lichtgroen);
+}
+
+.hot-item-body:hover h3{
+    transition: color 0.2s ease;
+}
+
+/*POSTS*/
+#some-posts .post{
+    cursor: pointer;
+}
+
+#some-posts .post a{
+    transition: color 0.2s ease;
+}
+
+#some-posts .post:hover a{
+    color:var(--lichtgroen);
+}
+
 /*Footer*/
 
 /*Placeholder color wit*/
@@ -422,6 +612,11 @@ body{
 }
 .footer-top .form-control:focus{
     box-shadow: 0 0 0;
+}
+
+/*discount-email-form*/
+#discount-email-form button:hover{
+    color:var(--lichtgroen);
 }
 
 /*Footer bottom*/
@@ -457,7 +652,28 @@ body{
         transform: scale(1.2);
     }
 
+footer a:hover{
+    color:var(--lichtgroen) !important;
+}
+
 /*media queries*/
+@media (min-width: 768px){
+    /*product top dropdowns*/
+    #product-top-dropdown button{
+        width:auto;
+    }
+    .mt-md-7{
+        margin-top: 5rem;
+    }
+    .mt-md-8{
+        margin-top: 7rem;
+    }
+    .navbar{
+        transition: top 0.3s ease-in-out;
+        background-color: rgba(255,255,255,0.9);
+    }
+}
+
 @media (min-width: 992px) {
     /*borders vanaf 992px*/
     .border-lg-0{
@@ -472,4 +688,5 @@ body{
     .navbar .nav-item{
         width: auto;
     }
+
 }
